@@ -1,0 +1,16 @@
+<h1>Produtos</h1>
+<div class="products">
+    {{#each products}}
+        <div class="product">
+            <img src="{{this.image}}" alt="{{this.name}}">
+            <h3>{{this.name}}</h3>
+            <p>R${{this.price}}</p>
+            <div class="actions">
+                <a href="/{{this._id}}">Detalhes</a>
+                <form action="/remove/{{this._id}}" method="post">
+                    <input type="submit" value="Excluir" class="btn">
+                </form>
+            </div>
+        </div>
+    {{/each}}
+</div>
